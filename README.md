@@ -6,7 +6,7 @@ This is made specifically for Diepcord. Any queries should be made in the suppor
 
 ## Current features
 
-- get random diep link for party mode or server region
+- get random or all diep links given party mode and server region
 
 ## Install and run
 
