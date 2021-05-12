@@ -10,7 +10,7 @@ module.exports = {
     description: 'Fetches a random or a list of diep servers by gamemode and region',
     handler: ({ msg, args }) => {
         if (args.length !== 3) {
-            return msg.lineReply('usage: getdiepserver (all/random) gamemode region');
+            return msg.lineReply('usage: getserver (all/random) gamemode region');
         }
         const allOrRandom = args[0];
         const gamemode = args[1];
