@@ -40,6 +40,9 @@ class Storage {
         this.data.user[userId] = data;
         this.unsavedChanges = true;
     }
+    *iterateUserIds() {
+        for (const userId in this.data.user) yield userId;
+    }
 
     // server data
     /*
@@ -51,6 +54,10 @@ class Storage {
                 content: 'hi',
                 reply: false
             }
+        },
+        totw: { // totw = tank of the week
+            channelId: 'channelid',
+            currentTank: 'Basic Tank'
         }
     }
     */
@@ -64,6 +71,9 @@ class Storage {
         if (typeof data !== 'object') throw new TypeError('data must be an object');
         this.data.server[serverId] = data;
         this.unsavedChanges = true;
+    }
+    *iterateServerIds() {
+        for (const serverId in this.data.server) yield serverId;
     }
 
     save() {

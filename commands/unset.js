@@ -2,15 +2,22 @@ module.exports = {
     adminOnly: true,
     handler: ({msg, args, storage}) => {
         if (args.length === 0) {
-            return msg.lineReply('available settings: prefix, alias');
+            return msg.lineReply('available settings: prefix, alias, totwChannel');
         }
         const serverData = storage.getServerData(msg.guild.id);
         switch(args[0]) {
             case 'prefix':
-                if (args.length !== 2) return msg.lineReply('must contain no arguments');
+                if (args.length !== 1) return msg.lineReply('must contain no arguments');
                 delete serverData.prefix;
                 storage.setServerData(msg.guild.id, serverData);
                 msg.lineReply('successfully unset prefix');
+                break;
+            case 'totwChannel':
+                if (args.length !== 1) return msg.lineReply('must contain no arguments');
+                if (!serverData.totw) return msg.lineReply('totwChannel does not exist');
+                delete serverData.totw;
+                storage.setServerData(msg.guild.id, serverData);
+                msg.lineReply('successfully unset totwChannel');
                 break;
             case 'alias':
                 if (args.length !== 2) return msg.lineReply('must contain one argument for specifying the alias command');

@@ -1,8 +1,10 @@
+const idRegex = /^\d{18}$/
+
 module.exports = {
     adminOnly: true,
-    handler: ({msg, args, storage}) => {
+    handler: ({msg, args, storage, bot}) => {
         if (args.length === 0) {
-            return msg.lineReply('available settings: prefix, alias');
+            return msg.lineReply('available settings: prefix, alias, totwChannel');
         }
         const serverData = storage.getServerData(msg.guild.id);
         switch(args[0]) {
@@ -29,6 +31,19 @@ module.exports = {
                 };
                 storage.setServerData(msg.guild.id, serverData);
                 msg.lineReply('successfully set alias ' + aliasCommand);
+                break;
+            case 'totwChannel':
+                if (args.length !== 2) return msg.lineReply('must provide ID of channel or <#channelid>');
+                const totwChannel = args[1].replace(/<#(\d+)>/, '$1');
+                if (!idRegex.test(totwChannel)) return msg.lineReply('Invalid channel id ' + totwChannel);
+                if (!msg.guild.channels.cache.find(channel => channel.id === totwChannel)) {
+                    return msg.lineReply('Channel does not exist');
+                }
+
+                if (!serverData.totw) serverData.totw = {};
+                serverData.totw.channelId = totwChannel;
+                storage.setServerData(msg.guild.id, serverData);
+                msg.lineReply(`successfully set totwChannel to <#${serverData.totw.channelId}>`);
                 break;
             default:
                 msg.lineReply('cannot find setting: ' + args[0]);

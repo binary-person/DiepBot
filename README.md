@@ -7,6 +7,7 @@ This is made specifically for Diepcord. Any queries should be made in the suppor
 ## Current features
 
 - get random or all diep links given party mode and server region
+- select a random tank for Tank of the Week (TOTW)
 
 ## Install and run
 
