@@ -1,3 +1,10 @@
+## v1.2.0
+
+- Move formatMS to util folder
+- Add aliases: tdm and 2tdm for teams. 4tdm for 4teams. sbx for sandbox.
+- Add `getserverinfo` command
+- Add record keeping functionality to DiepServerCollection for determining diep server uptime
+
 ## v1.1.1
 
 - rename command 'getdiepserver' to 'getserver'

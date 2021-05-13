@@ -1,6 +1,6 @@
 {
   "name": "DiepBot",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A Diep.io discord bot for Diepcord.",
   "main": "server.js",
   "scripts": {

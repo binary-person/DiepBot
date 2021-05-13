@@ -13,7 +13,7 @@ module.exports = {
             return msg.lineReply('usage: getserver (all/random) gamemode region');
         }
         const allOrRandom = args[0];
-        const gamemode = args[1];
+        const gamemode = DiepServerCollection.findAlias(args[1]) || args[1];
         const region = args[2];
         if (allOrRandom !== 'all' && allOrRandom !== 'random') {
             return msg.lineReply('1st parameter must be either all or random, not ' + escapeDiscordMessage(allOrRandom));
@@ -35,5 +35,6 @@ module.exports = {
         else {
             throw new Error('This shouldn\'t be possible. allOrRandom: ' + allOrRandom);
         }
-    }
+    },
+    diepServers, partyToProperDiscordLink // to be shared with getserverinfo.js
 };

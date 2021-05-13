@@ -2,3 +2,4 @@ node_modules/
 TOKEN.txt
 OWNER_ID.txt
 data.json
+cached_servers.json
