@@ -1,3 +1,9 @@
+## v1.3.0
+
+- Add weekly challenges
+- Add `weeklychallenge` command
+- Changed weekly time to Sunday 5am UTC
+
 ## v1.2.0
 
 - Move formatMS to util folder

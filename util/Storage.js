@@ -58,6 +58,10 @@ class Storage {
         totw: { // totw = tank of the week
             channelId: 'channelid',
             currentTank: 'Basic Tank'
+        },
+        weeklyChallenge: {
+            channelId: 'channelid',
+            currentChallenge: 'Achieve a ratio of 5000 per min'
         }
     }
     */

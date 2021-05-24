@@ -1,7 +1,7 @@
 const tankImages = require('../assets/tankImages');
 
 module.exports = {
-    crontab: '0 0 * * sun', // every Sunday
+    crontab: '0 5 * * sun', // every Sunday 5am utc
     runImmediately: true,
 
     handler: ({ bot, storage, firstRun }) => {

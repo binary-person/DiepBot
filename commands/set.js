@@ -1,10 +1,11 @@
 const idRegex = /^\d{18}$/
+const channelRegex = /<#(\d+)>/;
 
 module.exports = {
     adminOnly: true,
     handler: ({msg, args, storage, bot}) => {
         if (args.length === 0) {
-            return msg.lineReply('available settings: prefix, alias, totwChannel');
+            return msg.lineReply('available settings: prefix, alias, totwChannel, weeklyChallengeChannel');
         }
         const serverData = storage.getServerData(msg.guild.id);
         switch(args[0]) {
@@ -34,7 +35,7 @@ module.exports = {
                 break;
             case 'totwChannel':
                 if (args.length !== 2) return msg.lineReply('must provide ID of channel or <#channelid>');
-                const totwChannel = args[1].replace(/<#(\d+)>/, '$1');
+                const totwChannel = args[1].replace(channelRegex, '$1');
                 if (!idRegex.test(totwChannel)) return msg.lineReply('Invalid channel id ' + totwChannel);
                 if (!msg.guild.channels.cache.find(channel => channel.id === totwChannel)) {
                     return msg.lineReply('Channel does not exist');
@@ -44,6 +45,19 @@ module.exports = {
                 serverData.totw.channelId = totwChannel;
                 storage.setServerData(msg.guild.id, serverData);
                 msg.lineReply(`successfully set totwChannel to <#${serverData.totw.channelId}>`);
+                break;
+            case 'weeklyChallengeChannel':
+                if (args.length !== 2) return msg.lineReply('must provide ID of channel or <#channelid>');
+                const weeklyChallengeChannel = args[1].replace(channelRegex, '$1');
+                if (!idRegex.test(weeklyChallengeChannel)) return msg.lineReply('Invalid channel id ' + weeklyChallengeChannel);
+                if (!msg.guild.channels.cache.find(channel => channel.id === weeklyChallengeChannel)) {
+                    return msg.lineReply('Channel does not exist');
+                }
+
+                if (!serverData.weeklyChallenge) serverData.weeklyChallenge = {};
+                serverData.weeklyChallenge.channelId = weeklyChallengeChannel;
+                storage.setServerData(msg.guild.id, serverData);
+                msg.lineReply(`successfully set weeklyChallengeChannel to <#${serverData.weeklyChallenge.channelId}>`);
                 break;
             default:
                 msg.lineReply('cannot find setting: ' + args[0]);

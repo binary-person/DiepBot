@@ -2,7 +2,7 @@ module.exports = {
     adminOnly: true,
     handler: ({msg, args, storage}) => {
         if (args.length === 0) {
-            return msg.lineReply('available settings: prefix, alias, totwChannel');
+            return msg.lineReply('available settings: prefix, alias, totwChannel, weeklyChallengeChannel');
         }
         const serverData = storage.getServerData(msg.guild.id);
         switch(args[0]) {
@@ -18,6 +18,13 @@ module.exports = {
                 delete serverData.totw;
                 storage.setServerData(msg.guild.id, serverData);
                 msg.lineReply('successfully unset totwChannel');
+                break;
+            case 'weeklyChallengeChannel':
+                if (args.length !== 1) return msg.lineReply('must contain no arguments');
+                if (!serverData.weeklyChallenge) return msg.lineReply('weeklyChallengeChannel does not exist');
+                delete serverData.weeklyChallenge;
+                storage.setServerData(msg.guild.id, serverData);
+                msg.lineReply('successfully unset weeklyChallengeChannel');
                 break;
             case 'alias':
                 if (args.length !== 2) return msg.lineReply('must contain one argument for specifying the alias command');
