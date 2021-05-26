@@ -66,7 +66,7 @@ const challenges = [{
         REPLACER2: tanks,
         REPLACER3: gamemodes
     }
-}, {
+}/*, {
     msg: 'Kill a boss with REPLACER1 Tank',
     randoms: {
         REPLACER1: tanks
@@ -77,7 +77,7 @@ const challenges = [{
         REPLACER1: tanks,
         REPLACER2: ['FFA', '2 Teams', '4 Teams']
     }
-}];
+}*/];
 
 // min max inclusive
 function randomInt(min, max) {
@@ -118,9 +118,9 @@ module.exports = {
         };
         if (challenge.tiers) {
             let msg = randomValues();
-            genMsg += `**Easy:** ${randomValuesTier(msg, 'easy')}\n`;
-            genMsg += `**Medium:** ${randomValuesTier(msg, 'medium')}\n`;
-            genMsg += `**Hard:** ${randomValuesTier(msg, 'hard')}\n`;
+            genMsg += `**Easy (2 tokens):** ${randomValuesTier(msg, 'easy')}\n`;
+            genMsg += `**Medium (4 tokens):** ${randomValuesTier(msg, 'medium')}\n`;
+            genMsg += `**Hard (6 tokens):** ${randomValuesTier(msg, 'hard')}\n`;
         } else {
             genMsg += randomValues();
         }

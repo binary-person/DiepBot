@@ -1,3 +1,8 @@
+## v1.3.1
+
+- Add token reward amount to weekly challenges
+- Remove non-tiered weekly challenges for now
+
 ## v1.3.0
 
 - Add weekly challenges
