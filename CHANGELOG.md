@@ -1,3 +1,9 @@
+## v1.3.2
+
+- Round to the nearest thousand for weekly challenges
+- Introduce minimum score requirement for weekly challenges
+- Changed weekly time to Sunday 4am UTC
+
 ## v1.3.1
 
 - Add token reward amount to weekly challenges

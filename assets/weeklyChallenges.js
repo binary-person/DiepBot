@@ -10,7 +10,8 @@ const challenges = [{
             medium: [10000, 15000],
             hard: [15000, 20000]
         }
-    }
+    },
+    postProcessing: msg => msg.replace(/(ratio of )(\d+)(.+)/, (_match, g1, g2, g3) => g1 + g2 + g3 + ` (minimum score: ${roundInt(g2 * 5)})`)
 }, {
     msg: 'Achieve REPLACER1 score in REPLACER2 gamemode',
     tiers: {
@@ -84,6 +85,10 @@ function randomInt(min, max) {
     // credit to https://stackoverflow.com/a/1527820/6850723
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+function roundInt(num, precision = 1000) {
+    if (num > precision) return Math.round(num / precision) * precision;
+    return num;
+}
 
 function arrayRandom(arr) {
     return arr[randomInt(0, arr.length - 1)];
@@ -95,9 +100,9 @@ module.exports = {
         /*
         __**Here are this week's weekly challenges!**__
         
-        **Easy:** <Easy Challenge>
-        **Medium:** <Medium Challenge>
-        **Hard:** <Hard Challenge>
+        **Easy (2 tokens):** <Easy Challenge>
+        **Medium (4 tokens):** <Medium Challenge>
+        **Hard (6 tokens):** <Hard Challenge>
         */
         let genMsg = "__**Here are this week's weekly challenges!**__\n\n";
         const challenge = arrayRandom(challenges);
@@ -112,7 +117,10 @@ module.exports = {
         };
         const randomValuesTier = (msg, tier) => {
             for (const prop in challenge.tiers) {
-                msg = msg.replace(prop, randomInt(challenge.tiers[prop][tier][0], challenge.tiers[prop][tier][1]));
+                msg = msg.replace(prop, roundInt(randomInt(challenge.tiers[prop][tier][0], challenge.tiers[prop][tier][1])));
+            }
+            if (challenge.postProcessing) {
+                msg = challenge.postProcessing(msg);
             }
             return msg;
         };

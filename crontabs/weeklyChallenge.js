@@ -1,7 +1,7 @@
 const weeklyChallenges = require('../assets/weeklyChallenges');
 
 module.exports = {
-    crontab: '0 5 * * sun', // every Sunday 5pm utc
+    crontab: '0 4 * * sun', // every Sunday 4am utc
     runImmediately: true,
 
     handler: ({ bot, storage, firstRun }) => {
