@@ -1,3 +1,7 @@
+## v1.4.1
+
+- Fix uptime output for `getallservers`
+
 ## v1.4.0
 
 - Add command `getallservers`

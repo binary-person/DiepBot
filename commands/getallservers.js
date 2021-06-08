@@ -29,11 +29,13 @@ module.exports = {
         if (Object.keys(data).length === 0 || Object.keys(data[gamemode]).length === 0) {
             return msg.lineReply(unavailableMsg);
         }
-        
+
+
+        const now = Date.now();
         let returnMsg = `__**All diep.io server links for ${gamemodeToRealName[gamemode]}**__\n\n`;
         for (const region in data[gamemode]) {
             for (const serverId in data[gamemode][region]) {
-                returnMsg += `${partyToProperDiscordLink(convertServerIdToParty(serverId))}, ${region}, up for ${formatMS(data[gamemode][region][serverId].timeFirstSeen)}\n`;
+                returnMsg += `${partyToProperDiscordLink(convertServerIdToParty(serverId))}, ${region}, up for ${formatMS(now - data[gamemode][region][serverId].timeFirstSeen)}\n`;
             }
         }
         msg.lineReplyNoMention(returnMsg);
