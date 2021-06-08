@@ -36,5 +36,5 @@ module.exports = {
             throw new Error('This shouldn\'t be possible. allOrRandom: ' + allOrRandom);
         }
     },
-    diepServers, partyToProperDiscordLink // to be shared with getserverinfo.js
+    diepServers, partyToProperDiscordLink, unavailableMsg // to be shared with getserverinfo.js and getallservers.js
 };

@@ -41,12 +41,10 @@ class DiepServerCollection {
 
 
     getAll() {
-        const serverIDs = [];
+        let serverIDs = [];
         for (const gamemode in this.data) {
             for (const eachRegion in this.data[gamemode]) {
-                if (this.data[gamemode][eachRegion].length !== 0) {
-                    serverIDs = serverIDs.concat(Object.keys(this.data[gamemode][eachRegion]));
-                }
+                serverIDs = serverIDs.concat(Object.keys(this.data[gamemode][eachRegion]));
             }
         }
         return arrayToPartyLinks(serverIDs);

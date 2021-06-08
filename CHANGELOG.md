@@ -1,3 +1,7 @@
+## v1.4.0
+
+- Add command `getallservers`
+
 ## v1.3.2
 
 - Round to the nearest thousand for weekly challenges
