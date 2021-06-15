@@ -1,3 +1,7 @@
+## v1.5.1
+
+- Add option to automatically react to diep links that are expired for the `check` command
+
 ## v1.5.0
 
 - Fix aliasing a multi-argument command
