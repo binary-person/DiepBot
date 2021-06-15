@@ -111,7 +111,7 @@ function msgHandler(msg, recursiveCall = false) {
     }
     else if (serverData.aliases && serverData.aliases[command]) {
       const alias = serverData.aliases[command];
-      if (alias.content !== 'prototype' && alias.content !== '__proto__' && alias.content !== 'constructor' && commands[alias.content] && recursiveCall !== true) { // recursiveCall as a precaution
+      if (alias.content !== 'prototype' && alias.content !== '__proto__' && alias.content !== 'constructor' && commands[alias.content.split(' ')[0]] && recursiveCall !== true) { // recursiveCall as a precaution
         // alias command
         msg.content = prefix + alias.content + ' ' + args.join(' ');
         msgHandler(msg, true);

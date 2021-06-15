@@ -1,4 +1,4 @@
-const idRegex = /^\d{18}$/
+const idRegex = /^\d{18}$/;
 const channelRegex = /<#(\d+)>/;
 
 module.exports = {
@@ -37,7 +37,7 @@ module.exports = {
                 if (args.length !== 2) return msg.lineReply('must provide ID of channel or <#channelid>');
                 const totwChannel = args[1].replace(channelRegex, '$1');
                 if (!idRegex.test(totwChannel)) return msg.lineReply('Invalid channel id ' + totwChannel);
-                if (!msg.guild.channels.cache.find(channel => channel.id === totwChannel)) {
+                if (!msg.guild.channels.cache.get(totwChannel)) {
                     return msg.lineReply('Channel does not exist');
                 }
 
@@ -50,7 +50,7 @@ module.exports = {
                 if (args.length !== 2) return msg.lineReply('must provide ID of channel or <#channelid>');
                 const weeklyChallengeChannel = args[1].replace(channelRegex, '$1');
                 if (!idRegex.test(weeklyChallengeChannel)) return msg.lineReply('Invalid channel id ' + weeklyChallengeChannel);
-                if (!msg.guild.channels.cache.find(channel => channel.id === weeklyChallengeChannel)) {
+                if (!msg.guild.channels.cache.get(weeklyChallengeChannel)) {
                     return msg.lineReply('Channel does not exist');
                 }
 

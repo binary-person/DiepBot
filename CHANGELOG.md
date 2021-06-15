@@ -1,3 +1,8 @@
+## v1.5.0
+
+- Fix aliasing a multi-argument command
+- Add `check` command
+
 ## v1.4.1
 
 - Fix uptime output for `getallservers`
