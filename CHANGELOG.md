@@ -1,3 +1,7 @@
+## v1.5.2
+
+- Accommodate recent m28 server id reset updates in `convertServerIdToParty.js`
+
 ## v1.5.1
 
 - Add option to automatically react to diep links that are expired for the `check` command
