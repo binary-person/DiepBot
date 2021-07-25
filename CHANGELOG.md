@@ -1,6 +1,10 @@
+## v1.5.3
+
+- Fix party links not being converted to server ids correctly
+
 ## v1.5.2
 
-- Accommodate recent m28 server id reset updates in `convertServerIdToParty.js`
+- Accommodate recent m28 server id reset updates in `convertPartyToServerId.js`
 
 ## v1.5.1
 
