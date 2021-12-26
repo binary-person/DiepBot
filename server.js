@@ -15,8 +15,8 @@ const defaultPrefix = config.defaultPrefix; // intended to be an ascii represent
 
 const bot = new Discord.Client();
 const storage = new Storage();
-const token = fs.existsSync(tokenFilePath) ? fs.readFileSync(path.join(__dirname, tokenFilePath), 'utf8').trim() : false;
-const ownerId = fs.existsSync(ownerIdPath) ? fs.readFileSync(path.join(__dirname, ownerIdPath), 'utf8').trim() : false;
+const token = process.env.D_TOKEN || (fs.existsSync(tokenFilePath) ? fs.readFileSync(path.join(__dirname, tokenFilePath), 'utf8').trim() : false);
+const ownerId = process.env.D_OWNER_ID || (fs.existsSync(ownerIdPath) ? fs.readFileSync(path.join(__dirname, ownerIdPath), 'utf8').trim() : false);
 const commands = Object.create(null);
 const cronsToRunImmediately = [];
 let viewOwnerAsAdmin = false;
