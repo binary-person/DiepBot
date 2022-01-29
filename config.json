@@ -1,3 +1,10 @@
 {
-    "defaultPrefix": "o="
+    "guildId": "195278167181754369",
+    "tankOfTheWeekChannelId": "249645140795326464",
+    "weeklyChallengeChannelId": "846376435957497867",
+    "modRoleId": "204313198256455691",
+    "checkChannelId": "249645140795326464",
+    "checkReactEmojiId": "395264598388768768",
+    "routineCheckNotifyRole": "249563898808631296",
+    "routineCheckNotifyChannel": "318519784016707584"
 }

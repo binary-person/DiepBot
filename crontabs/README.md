@@ -11,8 +11,8 @@ module.exports = {
 
     // storage is an instance of the Storage class. See Storage.js
     // firstRun is true if handler is run immediately
-    handler: ({bot, storage, firstRun}) => {
-        bot.channels.cache.get('channelid').send('This gets sent every minute');
+    handler: ({client, firstRun}) => {
+        client.channels.cache.get('channelid').send('This gets sent every minute');
     }
 };
 ```

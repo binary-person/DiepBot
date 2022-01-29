@@ -1,3 +1,9 @@
+## v2.0.0
+
+- Switched to slash command system
+- Hard-coded many values for Diepcord, and removed settings storage
+- added routine check server links for Diepcord
+
 ## v1.5.3
 
 - Fix party links not being converted to server ids correctly

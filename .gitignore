@@ -1,5 +1,6 @@
 node_modules/
-TOKEN.txt
-OWNER_ID.txt
-data.json
-cached_servers.json
+.env
+crontabs/fetchLobbyData.js
+captain-definition
+deploy.sh
+deployment.tar

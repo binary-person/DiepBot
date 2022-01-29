@@ -1,6 +1,6 @@
 {
-  "name": "DiepBot",
-  "version": "1.5.3",
+  "name": "diepbot",
+  "version": "2.0.0",
   "description": "A Diep.io discord bot for Diepcord.",
   "main": "server.js",
   "scripts": {
@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/binary-person/DiepBot#readme",
   "dependencies": {
-    "discord-reply": "^0.1.2",
-    "discord.js": "^12.5.3",
-    "node-cron": "^3.0.0",
-    "node-fetch": "^2.6.1"
+    "@discordjs/builders": "^0.11.0",
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.6.0",
+    "dotenv": "^14.2.0",
+    "node-cron": "^3.0.0"
   }
 }
