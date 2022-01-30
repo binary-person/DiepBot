@@ -1,3 +1,7 @@
+## v2.1.0
+
+- Added DiepStats link support
+
 ## v2.0.0
 
 - Switched to slash command system
