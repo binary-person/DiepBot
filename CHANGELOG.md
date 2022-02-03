@@ -1,6 +1,12 @@
+## v2.2.0
+
+- Add wordle support :D
+- Add silencing feature for notifications
+- Add DiepStats linking command
+
 ## v2.1.0
 
-- Added DiepStats link support
+- Add DiepStats link support
 
 ## v2.0.0
 
