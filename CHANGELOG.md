@@ -1,3 +1,8 @@
+## v2.1.1
+
+- Add include-only for wordle
+- Fix number bounds for wordle
+
 ## v2.2.0
 
 - Add wordle support :D

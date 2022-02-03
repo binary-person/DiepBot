@@ -15,9 +15,13 @@ module.exports = {
             .addStringOption(option => option
                 .setName('type')
                 .setDescription('Wordlist to choose from')
+                .addChoice('all', 'all')
                 .addChoice('answer list', 'answer list')
                 .addChoice('valid list', 'valid list')
                 .setRequired(true))
+            .addStringOption(option => option
+                .setName('include-only')
+                .setDescription('Only include if it contains the characters. ("abc" will only contain words containing a, b, and c)'))
             .addNumberOption(option => option
                 .setName('number-of-words')
                 .setDescription('Number of random words to get (default: 1, limit: 100)')
@@ -38,8 +42,22 @@ module.exports = {
         const cmd = interaction.options.getSubcommand();
         switch (cmd) {
             case 'random-words':
-                const list = interaction.options.getString('type') === 'answer list' ? wordleList.answerList : wordleList.validList;
-                await interaction.reply(Array(Math.min(interaction.options.getNumber('number-of-words') || 1, 100)).fill().map(e => getRandom(list)).join(', '));
+                const includeOnly = interaction.options.getString('include-only');
+                const type = interaction.options.getString('type');
+                let list = type === 'answer list' ? wordleList.answerList : (type === 'valid list' ? wordleList.validList : [...wordleList.answerList, wordleList.validList]);
+                if (includeOnly) {
+                    list = list.filter(word => {
+                        for (const char of includeOnly) {
+                            if (!word.includes(char)) return false;
+                        }
+                        return true;
+                    });
+                }
+                if (list.length !== 0) {
+                    await interaction.reply(Array(Math.max(Math.min(interaction.options.getNumber('number-of-words') || 1, 100), 1)).fill().map(e => getRandom(list)).join(', '));
+                } else {
+                    await interaction.reply('List is empty');
+                }
                 break;
             case 'check-word':
                 const word = interaction.options.getString('word');
