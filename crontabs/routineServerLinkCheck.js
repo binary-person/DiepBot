@@ -6,7 +6,7 @@ const { routineCheckNotifyChannel, routineCheckNotifyRole } = require('../config
 let alreadyNotified = false;
 
 module.exports = {
-    crontab: '0 * * * *', // every hour
+    crontab: '6 * * * *', // every 6 hour
     runImmediately: false,
 
     handler: async ({ client }) => {

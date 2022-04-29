@@ -1,4 +1,8 @@
-## v2.1.1
+## v2.2.2
+
+- Change to 6 hours per server link check
+
+## v2.2.1
 
 - Add include-only for wordle
 - Fix number bounds for wordle
