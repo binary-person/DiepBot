@@ -1,3 +1,8 @@
+## v2.2.4
+
+- Fix broken prevention of constant reminders about server expired links
+- Add ability to shush bot from sending server expired link notifications
+
 ## v2.2.3
 
 - Fix discord's breaking API change
