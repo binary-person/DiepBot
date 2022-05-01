@@ -38,23 +38,23 @@ for (const eachModuleFile of fs.readdirSync(cronDir)) {
 }
 
 client.once('ready', async () => {
-    console.log('Setting command permissions');
-    const commands = await client.guilds.cache.get(guildId).commands.fetch();
-    for (const [, cmd] of commands) {
-        if (cmd.defaultPermission === false) {
-            await cmd.permissions.set({
-                permissions: [{
-                    id: modRoleId,
-                    type: 'ROLE',
-                    permission: true
-                }, {
-                    id: ownerId,
-                    type: 'USER',
-                    permission: true
-                }]
-            });
-        }
-    };
+    // console.log('Setting command permissions');
+    // const commands = await client.guilds.cache.get(guildId).commands.fetch();
+    // for (const [, cmd] of commands) {
+    //     if (cmd.defaultPermission === false) {
+    //         await cmd.permissions.set({
+    //             permissions: [{
+    //                 id: modRoleId,
+    //                 type: 'ROLE',
+    //                 permission: true
+    //             }, {
+    //                 id: ownerId,
+    //                 type: 'USER',
+    //                 permission: true
+    //             }]
+    //         });
+    //     }
+    // };
     console.log('Running startup crontabs');
     for (const eachCron of cronsToRunImmediately) eachCron();
     console.log('Ready!');

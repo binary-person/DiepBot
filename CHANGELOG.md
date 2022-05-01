@@ -1,3 +1,7 @@
+## v2.2.3
+
+- Fix discord's breaking API change
+
 ## v2.2.2
 
 - Change to 6 hours per server link check
