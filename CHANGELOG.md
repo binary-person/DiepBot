@@ -1,3 +1,7 @@
+## v2.2.5
+
+- Update server regions
+
 ## v2.2.4
 
 - Fix broken prevention of constant reminders about server expired links
