@@ -1,3 +1,7 @@
+## v2.2.6
+
+- API update
+
 ## v2.2.5
 
 - Update server regions
