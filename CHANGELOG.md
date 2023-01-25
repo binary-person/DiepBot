@@ -1,3 +1,7 @@
+## v2.2.7
+
+- Update gamemodes
+
 ## v2.2.6
 
 - API update
