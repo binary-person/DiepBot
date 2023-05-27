@@ -46,7 +46,8 @@ const tankImages = {
     "Auto Smasher": "https://static.wikia.nocookie.net/diepio/images/d/df/AutoSmasher_NAV_Icon1.png",
     "Spike": "https://static.wikia.nocookie.net/diepio/images/5/51/Spike_NAV_Icon1.png",
     "Sprayer": "https://static.wikia.nocookie.net/diepio/images/f/f3/Sprayer_NAV_Icon1.png",
-    "Auto Gunner": "https://static.wikia.nocookie.net/diepio/images/8/83/AutoGunner_NAV_Icon1.png"
+    "Auto Gunner": "https://static.wikia.nocookie.net/diepio/images/8/83/AutoGunner_NAV_Icon1.png",
+    "Glider": "https://static.wikia.nocookie.net/diepio/images/b/b1/Glider_icon_new.png"
 };
 
 module.exports = {
