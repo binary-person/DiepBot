@@ -7,7 +7,7 @@ module.exports = {
 		.setDescription('Handy dev tool for converting links to server ids.')
 		.addStringOption(option => option
 			.setName('link')
-			.setDescription('format: diep.io/#1234')
+		.setDescription('format: diep.io/?p=1234')
 			.setRequired(true)),
 	async execute(interaction) {
 		const result = convertPartyToServerId(interaction.options.getString('link'));

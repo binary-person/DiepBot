@@ -1,3 +1,7 @@
+## v2.2.8
+
+- Update party link format
+
 ## v2.2.7
 
 - Update gamemodes
