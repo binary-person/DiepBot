@@ -1,5 +1,12 @@
 const convertServerIdToParty = require('../util/convertServerIdToParty');
 
+/**
+ * 
+ * @param {import("./LobbyData").LobbyData} lobbyData 
+ * @param {*} gamemode 
+ * @param {*} region 
+ * @returns 
+ */
 module.exports = function filterLobbies(lobbyData, gamemode, region) {
     const servers = [];
     let playerCount = 0;

@@ -1,3 +1,7 @@
+## v2.2.9
+
+- Update server regions
+
 ## v2.2.8
 
 - Update party link format
